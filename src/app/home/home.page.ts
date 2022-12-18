@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  airports : any;
+
+  constructor(private httpClient: HttpClient) {
+    this.airports = this.httpClient.get('https://github.com/Rubenmejzap12/aeropuertos.git')
+    
+
+  }
 
 }
