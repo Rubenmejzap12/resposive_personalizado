@@ -1,0 +1,7 @@
+{
+  "name": "ListaMotos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
