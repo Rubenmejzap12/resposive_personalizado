@@ -11,6 +11,7 @@ export class HomePage {
 
   airports : any;
   filtro: string = '';
+  
 
   constructor(private httpClient: HttpClient) {
     this.airports = this.httpClient.get('https://raw.githubusercontent.com/Rubenmejzap12/aeropuertos/master/MOCK_DATA.json')
