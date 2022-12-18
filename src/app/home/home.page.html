@@ -7,5 +7,28 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+  <ion-input [(ngModel)]="filtro" placeholder="Introduce los datos del filtro">
+  </ion-input>
+  <ion-grid>
+    <ion-row>
+      <ng-container *ngFor="let airport of airports | async">
+        <ion-col *ngIf="filtro=='' || airport.continente.startsWith(filtro)" size-xl="2" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+          <ion-card>
+            <ion-card-content>
+              <!-- <ion-avatar>
+                <img [src]="airport.picture.medium">
+              </ion-avatar> -->
+              <h1>Nombre: {{ airport.Nombre}} </h1>
+              <br>
+              <h2>Codigo: {{ airport.code}} </h2>
+              <br>
+              <p>Codigo Region: {{ airport.region}} </p>
+              <br>
+              <p>Continente: {{ airport.continente}} </p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+  </ion-grid>
 </ion-content>
